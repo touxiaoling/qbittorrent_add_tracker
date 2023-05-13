@@ -1,0 +1,13 @@
+services:
+  qbittorrent-add-tracker:
+    build:
+      context: https://github.com/touxiaoling/qbittorrent_add_tracker.git
+    image: tousang/qbittorrent-add-tracker
+    labels:
+      com.centurylinklabs.watchtower.enable: true
+    environment:
+      - QBITTORRENT_HOST_NAME=localhost
+      - QBITTORRENT_PORT=8080
+      - QBITTORRENT_USER_NAME=admin
+      - QBITTORRENT_PASS_WORD=adminadmin
+    restart: unless-stopped
