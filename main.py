@@ -61,4 +61,4 @@ if __name__ == "__main__":
     schedule.every(scan_time).seconds.do(scan_add_tracker)
     while True:
         schedule.run_pending()
-        time.sleep(int(scan_time/5) or 1 )
+        time.sleep(scan_time//5 or 1 )
