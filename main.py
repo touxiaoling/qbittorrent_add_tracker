@@ -57,8 +57,8 @@ def scan_add_tracker():
                 torrent.add_trackers(urls=[ipv4.geturl(),])
 
 if __name__ == "__main__":
-    
-    schedule.every(5).minutes.do(scan_add_tracker)
+    scan_time=int(os.getenv("SCAN_SECONDS")) or 300
+    schedule.every(scan_time).seconds.do(scan_add_tracker)
     while True:
         schedule.run_pending()
         time.sleep(60)
