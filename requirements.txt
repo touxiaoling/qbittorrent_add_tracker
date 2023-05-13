@@ -1,0 +1,4 @@
+qbittorrent-api
+python-dotenv
+tqdm
+schedule
